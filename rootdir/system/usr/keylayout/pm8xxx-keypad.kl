@@ -61,4 +61,4 @@ key 26    AT                WAKE_DROPPED
 key 27    GRAVE             WAKE_DROPPED
 
 key 127   PICTSYMBOLS       WAKE_DROPPED
-key 368   CAPS_LOCK         WAKE_DROPPED
+key 368   LANGUAGE_SWITCH   WAKE_DROPPED

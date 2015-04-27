@@ -19,6 +19,7 @@ DEVICE_PACKAGE_OVERLAYS += device/semc/mango/overlay
 DEVICE_PACKAGE_OVERLAYS += device/semc/mogami-common/overlay-keyboard
 
 $(call inherit-product, device/semc/mogami-common/mogami.mk)
+$(call inherit-product, device/semc/mogami-common/mogami-keyboard.mk)
 
 # These are the hardware-specific features
 PRODUCT_COPY_FILES += \
@@ -40,16 +41,10 @@ PRODUCT_COPY_FILES += \
 # Device specific configs
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/rootdir/system/usr/idc/cyttsp-spi.idc:system/usr/idc/cyttsp-spi.idc \
-    $(LOCAL_PATH)/rootdir/system/usr/idc/pm8xxx-keypad.idc:system/usr/idc/pm8xxx-keypad.idc \
-    $(LOCAL_PATH)/rootdir/system/usr/keychars/pm8xxx-keypad.kcm:system/usr/keychars/pm8xxx-keypad.kcm \
     $(LOCAL_PATH)/rootdir/system/usr/keylayout/cyttsp_key.kl:system/usr/keylayout/cyttsp_key.kl \
     $(LOCAL_PATH)/rootdir/system/usr/keylayout/pm8xxx-keypad.kl:system/usr/keylayout/pm8xxx-keypad.kl \
     $(LOCAL_PATH)/rootdir/system/etc/sensors.conf:system/etc/sensors.conf \
     $(LOCAL_PATH)/rootdir/system/etc/wifi/TQS_S_2.6.ini:system/etc/wifi/TQS_S_2.6.ini
-
-# Keyboard
-PRODUCT_PACKAGES += \
-    MogamiKeypad
 
 # Device properties
 PRODUCT_PROPERTY_OVERRIDES += \
