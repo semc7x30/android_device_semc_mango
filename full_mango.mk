@@ -13,7 +13,10 @@
 # limitations under the License.
 
 # Inherit from those products. Most specific first.
-$(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
+PRODUCT_COPY_FILES := frameworks/native/data/etc/handheld_core_hardware.xml:system/etc/permissions/handheld_core_hardware.xml
+
+$(call inherit-product, $(SRC_TARGET_DIR)/product/aosp_base.mk)
+$(call inherit-product, $(SRC_TARGET_DIR)/product/telephony.mk)
 
 # Inherit from mango device
 $(call inherit-product, device/semc/mango/mango.mk)
@@ -29,3 +32,5 @@ PRODUCT_DEVICE := mango
 PRODUCT_BRAND := SEMC
 PRODUCT_MANUFACTURER := Sony Ericsson
 PRODUCT_MODEL := SK17i
+
+$(call inherit-product, device/semc/mango/lineage.mk)

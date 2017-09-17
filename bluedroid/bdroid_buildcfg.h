@@ -20,6 +20,13 @@
 
 #include "../../mogami-common/bluedroid/bdroid_buildcfg.h"
 
+#undef BLE_INCLUDED
+#undef BTA_GATT_INCLUDED
+#undef SMP_INCLUDED
+#define BLE_INCLUDED TRUE
+#define BTA_GATT_INCLUDED TRUE
+#define SMP_INCLUDED TRUE
+
 #define BTM_DEF_LOCAL_NAME   "Xperia Mini Pro"
 
 #endif

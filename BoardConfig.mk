@@ -14,6 +14,14 @@
 
 -include device/semc/mogami-common/BoardConfigCommon.mk
 -include vendor/semc/mango/BoardConfigVendor.mk
+-include vendor/cm/config/BoardConfigCM.mk
+TARGET_CPU_VARIANT := cortex-a8
+# Kernel
+ifeq ($(HOST_OS),linux)
+  KERNEL_TOOLCHAIN := $(ANDROID_BUILD_TOP)/prebuilts/gcc/linux-x86/arm/arm-eabi-4.8/bin
+else
+  KERNEL_TOOLCHAIN := $(ANDROID_BUILD_TOP)/prebuilts/gcc/darwin-x86/arm/arm-eabi-4.8/bin
+endif
 
 # Bluetooth
 BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := device/semc/mango/bluedroid

@@ -13,7 +13,7 @@
 # limitations under the License.
 
 # Inherit device configuration
-$(call inherit-product, device/semc/mango/full_mango.mk)
+#$(call inherit-product, device/semc/mango/full_mango.mk)
 
 # Inherit some common LineageOS stuff.
 $(call inherit-product, vendor/cm/config/common_mini_phone.mk)
@@ -31,3 +31,12 @@ PRODUCT_GMS_CLIENTID_BASE := android-sonyericsson
 
 # Custom tag for unofficial builds
 TARGET_UNOFFICIAL_BUILD_ID := LegacyXperia
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.com.android.dataroaming=true \
+    persist.sys.usb.config="mtp,adb" \
+    persist.sys.root_access=3 \
+    persist.sys.locale=zh-CN
+
+PRODUCT_PACKAGES += \
+    mkfs.f2fs \
+    MangoService
