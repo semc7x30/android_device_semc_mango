@@ -14,6 +14,8 @@
 
 -include device/semc/mogami-common/BoardConfigCommon.mk
 -include vendor/semc/mango/BoardConfigVendor.mk
+-include vendor/cm/config/BoardConfigCM.mk
+TARGET_CPU_VARIANT := cortex-a8
 
 # Bluetooth
 BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := device/semc/mango/bluedroid
